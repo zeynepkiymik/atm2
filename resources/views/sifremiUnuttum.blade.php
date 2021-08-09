@@ -11,9 +11,14 @@
 
     <style>
         #button{
-            width: 10px;
+            width: 140px;
             height: 30px;
             line-height: 0.5;
+        }
+
+        #email{
+
+
         }
     </style>
     <title>Document</title>
@@ -22,15 +27,23 @@
     <div class="container">
         <div class="row">
             <form action="emailgiriniz">
-            <h3> <span id="email" class="">Şifrenizi yenilemek için e-mail adresi giriniz</span> </h3>
+            <div class="col-12 text center">
+
+            <p2> <span id="email" class="">Şifrenizi yenilemek için e-mail adresi giriniz</span> </p2>
+            </div>
+
             <div class="row">
+            <div class="col-12 text center">
 
             <input type="text" placeholder="e-mail adresi" style="background color:bg-primary">
             </div>
+            </div>
 
             <div class="row" >
+                <div class="col-12 text center">
             <button type="submit" class="btn btn-primary mt-2" id="button"> 
               <i class="fa fa-redo"> </i>  Şifremi Yenile</button>
+              </div>
           </div>
             </form>
         </div>
