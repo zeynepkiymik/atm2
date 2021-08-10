@@ -55,7 +55,7 @@ Route::post('/para-cek', [AtmController::class, 'postParaCek'])->name('post.para
 }) ->name('paraekle');*/
 
 Route::get('/para-ekle', [AtmController::class, 'paraEkle'])->name('paraekle');
-
+Route::post('/para-ekle', [AtmController::class, 'postParaEkle'])->name('post.paraEkle');
 
 /*Route::get('/cikis', function () {
     //return view('welcome');
