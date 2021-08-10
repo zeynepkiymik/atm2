@@ -25,6 +25,7 @@
         <div class="col-sm-6">
 
             <form action="{{route('post.paracek')}}" method="POST">
+
                 @csrf
                 <input type="number" name="cekilen_para" class="form-control" placeholder="Tutar Giriniz">
                 <button type="submit" class="btn btn-primary mt-2" id="button"> 
