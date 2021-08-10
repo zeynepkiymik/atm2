@@ -14,10 +14,15 @@
             width: 140px;
             height: 30px;
             line-height: 0.5;
+            margin top: 5px;
         }
 
         #email{
+            margin top: 5px;
 
+        }
+        #emailadresi{
+            margin top: 5px;
 
         }
     </style>
@@ -27,17 +32,16 @@
     <div class="container">
         <div class="row">
             <form action="emailgiriniz">
-            <div class="col-12 text center">
 
-            <p2> <span id="email" class="">Şifrenizi yenilemek için e-mail adresi giriniz</span> </p2>
-            </div>
+            <p> <span id="email" class="">Şifrenizi yenilemek için e-mail adresi giriniz</span> </p>
+            </div><br>
 
             <div class="row">
             <div class="col-12 text center">
 
-            <input type="text" placeholder="e-mail adresi" style="background color:bg-primary">
+            <input type="text" id="emailadresi" placeholder="e-mail adresi" style="background color:bg-primary">
             </div>
-            </div>
+            </div><br>
 
             <div class="row" >
                 <div class="col-12 text center">
