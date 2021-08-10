@@ -25,6 +25,15 @@ class AtmController extends Controller
         return view('paraekle');
     }
 
+    public function postParaEkle(Request $request) {
+             
+        $yeniBakiye = Session::get('bakiye') +  $request->eklenen_para;
+     
+        $request->session()->put('bakiye', $yeniBakiye);
+
+        return redirect()->route('girissayfasi');
+    }
+
     public function sifremiUnuttum() {
         return view('sifremiUnuttum');
     }
