@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AtmController;
+
+use App\Http\Controllers\AuthController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,28 +18,48 @@ use Illuminate\Support\Facades\Route;
 |
 */
 /* Burası ana sayfa  */
-Route::get('/', function () {
+/*Route::get('/', function () {
     //return view('welcome');
     return view('atm');
-});
+});*/
+Route::get('/', [AtmController::class, 'index'])->name('index');
 
 
-Route::get('/sifremi-unuttum', function () {
+/*Route::get('/sifremi-unuttum', function () {
     //return view('welcome');
     return view('sifremiUnuttum');
-})->name('sifremiUnuttum');
+})->name('sifremiUnuttum');*/
 
-Route::get('/giris-sayfasi', function () {
+Route::get('/sifremi-unuttum', [AtmController::class, 'sifremiUnuttum'])->name('sifremiUnuttum');
+
+
+/*Route::get('/giris-sayfasi', function () {
     //return view('welcome');
     return view('girissayfasi');
-}) ->name('girissayfasi');
+}) ->name('girissayfasi');*/
 
-Route::get('/para-cek', function () {
+Route::get('/giris-sayfasi', [AtmController::class, 'girisSayfasi'])->name('girissayfasi');
+
+
+/*Route::get('/para-cek', function () {
     //return view('welcome');
     return view('paracek');
-}) ->name('paracek');
+}) ->name('paracek');*/
 
-Route::get('/para-gonder', function () {
+Route::get('/para-cek', [AtmController::class, 'paraCek'])->name('paracek');
+Route::post('/para-cek', [AtmController::class, 'postParaCek'])->name('post.paracek');
+
+/*Route::get('/para-ekle', function () {
     //return view('welcome');
-    return view('paragonder');
-}) ->name('paragonder');
+    return view('paraekle');
+}) ->name('paraekle');*/
+
+Route::get('/para-ekle', [AtmController::class, 'paraEkle'])->name('paraekle');
+
+
+/*Route::get('/cikis', function () {
+    //return view('welcome');
+    return view('cikis');
+}) ->name('cikis');*/
+
+Route::get('/cikis', [AuthController::class, 'cikis'])->name('cikis');
