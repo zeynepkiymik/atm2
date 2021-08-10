@@ -15,10 +15,14 @@
         
     <div class="row" style="margin-top: 2px; margin-bottom: 3px;">
         <div class="col-sm-6">
-
-            <input type="number" class="form-control" placeholder="Tutar Giriniz">
+        <h3>Bakiye {{ Session::get('bakiye') }}</h3>
+        <form action="{{route('post.paraEkle')}}"  method="POST">
+            @csrf
+            <input type="number" name="eklenen_para" class="form-control" placeholder="Tutar Giriniz">
             <button type="submit" class="btn btn-primary mt-2" id="button"> 
               <i class="fa fa-check"> </i>  Tamam </button>
+            
+        </form>
         </div>
         </div>
         
