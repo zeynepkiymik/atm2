@@ -14,7 +14,7 @@
         
     <div class="row" style="margin-top: 2px; margin-bottom: 3px;">
         <div class="col-sm-6">
-        <h3>Bakiye {{ Session::get('bakiye') }}</h3>
+        <h3>Bakiye {{ Session::get('bakiye') }}</h3> <!-- güncel bakiye -->
         <form action="{{route('post.paraEkle')}}"  method="POST">
             @csrf
             <input type="number" name="eklenen_para" class="form-control" placeholder="Tutar Giriniz">
