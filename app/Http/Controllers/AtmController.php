@@ -8,7 +8,7 @@ use Session;
 
 class AtmController extends Controller
 {
-    public function paraCek() {
+    public function paraCek() { /*3*/
         return view('paracek');
     }
     public function postParaCek(Request $request) {
@@ -34,18 +34,25 @@ class AtmController extends Controller
         return redirect()->route('girissayfasi');
     }
 
-    public function sifremiUnuttum() {
+    public function sifremiUnuttum() { 
         return view('sifremiUnuttum');
     }
 
     public function girisSayfasi(Request $request) {
-        if ( !Session::has('bakiye'))
+        if ( !Session::has('bakiye')) /*4*/ 
         $request->session()->put('bakiye', 10000);
 
         return view('girissayfasi');
     }
     public function index() {
         return view('atm');
+    }
+
+    public function deneme() {
+        return view('deneme');
+    }
+    public function postdenemeSayfasi(Request $request){
+        return redirect()->route('post.denemeSayfasi');
     }
 }
 
