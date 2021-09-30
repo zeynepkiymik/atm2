@@ -46,8 +46,8 @@ Route::get('/giris-sayfasi', [AtmController::class, 'girisSayfasi'])->name('giri
     return view('paracek');
 }) ->name('paracek');*/
 
-Route::get('/para-cek', [AtmController::class, 'paraCek'])->name('paracek');
-Route::post('/para-cek', [AtmController::class, 'postParaCek'])->name('post.paracek');
+Route::get('/para-cek', [AtmController::class, 'paraCek'])->name('paracek'); /*1*/
+Route::post('/para-cek', [AtmController::class, 'postParaCek'])->name('post.paracek'); /*2*/
 
 /*Route::get('/para-ekle', function () {
     //return view('welcome');
@@ -62,4 +62,16 @@ Route::post('/para-ekle', [AtmController::class, 'postParaEkle'])->name('post.pa
     return view('cikis');
 }) ->name('cikis');*/
 
-Route::get('/cikis', [AuthController::class, 'cikis'])->name('cikis');
+Route::get('/cikis', [AuthController::class, 'postcikis'])->name('cikis');
+Route::post('/cikis', [AtmController::class, 'postcikis'])->name('post.cikis');
+
+//Route::get('/deneme', [AtmController::class, 'deneme'])->name('deneme');
+Route::post('/deneme', [AtmController::class, 'postdenemeSayfasi'])->name('post.denemeSayfasi');
+
+Route::get('/deneme', function () {
+    $data=[
+        "ad"=>"zeynep",
+        "soyad"=>"kiymik"
+    ];
+    return view('deneme',compact ( 'data'));
+}) ->name('deneme');
